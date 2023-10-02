@@ -11,31 +11,33 @@
             margin: 2vw;
         }
 
-        .div1 {
-            margin: 1vh;
-            margin-bottom: 2vh;
-        }
-
-        .quad{
+        .quad {
+            height: 9vw;
+            width: 9vw;
             background-color: green;
-            width: 10vw;
-            height: 10vw;
             margin: 1vw;
             float: right;
         }
-        .retV {
+
+        .retH {
+            height: 9vw;
+            width: 25vw;
             background-color: green;
-            width: 10vw;
-            height: 20vw;
             margin: 1vw;
+            clear: right;
             float: left;
         }
 
-        .retH {
+        .retV {
+            height: 25vw;
+            width: 9vw;
             background-color: green;
-            width: 30vw;
-            height: 10vw;
             margin: 1vw;
+            clear: left;
+            float: right;
+        }
+
+        .retV2 {
             float: left;
         }
     </style>
@@ -44,8 +46,23 @@
 <body>
     <h1>Praticando 2 - Caixas Verdes</h1>
 
-    <div class="div1">
-        
+    <div>
+        <div class="quad"></div>
+        <div class="quad"></div>
+        <div class="quad"></div>
+    </div>
+
+    <div>
+        <div class="retH"></div>
+        <div class="retH"></div>
+    </div>
+
+    <div>
+        <div class="retV"></div>
+        <div class="retV"></div>
+        <div class="retV2">
+            <div class="retV"></div>
+        </div>
     </div>
 </body>
 

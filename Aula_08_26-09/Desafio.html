@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .coluna {
+            display: inline-block;
+            vertical-align: middle;
+            width: 30%;
+            padding: 2px;
+        }
+        .quadrado {
+            background-color: green;
+            width: 7vw;
+            height: 7vw;
+            margin: 0.5vw;
+            border-radius: 10%;
+        }
+        .circ{
+            background-color: red;
+            border-radius: 50%;
+        }
+        .inv{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="coluna">
+            <div class="quadrado circ"></div>
+            <div class="quadrado"></div>
+            <div class="quadrado"></div>
+            <div class="quadrado"></div>
+        </div>
+        <div class="coluna">
+            <div class="quadrado"></div>
+            <div class="quadrado"></div>
+            <div class="quadrado"></div>
+            <div class="quadrado"></div>
+        </div>
+        <div class="coluna">
+            <div class="quadrado"></div>
+            <div class="quadrado inv"></div>
+            <div class="quadrado"></div>
+            <div class="quadrado inv"></div>
+        </div>
+    </div>
+</body>
+</html>
