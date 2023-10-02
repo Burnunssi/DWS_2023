@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio</title>
     <style>
-        .container {
+        .center {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -13,45 +13,43 @@
         }
         .coluna {
             display: inline-block;
-            vertical-align: middle;
             width: 30%;
-            padding: 2px;
         }
-        .quadrado {
+        .quad {
             background-color: green;
             width: 7vw;
             height: 7vw;
             margin: 0.5vw;
             border-radius: 10%;
         }
-        .circ{
+        .circ {
             background-color: red;
             border-radius: 50%;
         }
-        .inv{
+        .inv {
             visibility: hidden;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="center">
         <div class="coluna">
-            <div class="quadrado circ"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
+            <div class="quad circ"></div>
+            <div class="quad"></div>
+            <div class="quad"></div>
+            <div class="quad"></div>
         </div>
         <div class="coluna">
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
+            <div class="quad"></div>
+            <div class="quad"></div>
+            <div class="quad"></div>
+            <div class="quad"></div>
         </div>
         <div class="coluna">
-            <div class="quadrado"></div>
-            <div class="quadrado inv"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado inv"></div>
+            <div class="quad"></div>
+            <div class="quad inv"></div>
+            <div class="quad"></div>
+            <div class="quad inv"></div>
         </div>
     </div>
 </body>
