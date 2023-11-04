@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 2</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #00cc99, #0077b3);
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        div {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div1 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .div2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            width: 10vw;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Praticando 2 - Formulários HTML</h1>
+
+    <div>
+        <form>
+            <div class="div1">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" value="">
+            </div>
+
+            <div class="div1">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="">
+            </div>
+            <div class="div1">
+                <label for="cars">Marca de carro preferida:</label>
+                <select name="cars" id="cars">
+                    <option value="fiat">Fiat</option>
+                    <option value="ford">Ford</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="bmw">BMW</option>
+                    <option value="nissan">Nissan</option>
+                </select>
+            </div>
+            <div class="div1">
+                <label for="obs">Observações:</label><br>
+                <textarea name="obs" id="obs" cols="30" rows="5"></textarea>
+                <br><br>
+            </div>
+            <br>
+            <div class="div3">
+                Linguagem Web favorita:
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html"><img src="html.png" width="90px"></label>
+
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css"><img src="css.png" width="90px"><label>
+
+                <input type="radio" id="js" name="fav_language" value="JavaScript">
+                <label for="js"><img src="js.webp" width="90px"></label>
+            </div>
+            <br>
+            <div class="div2">
+                Filmes que quero ver quando lançar:
+
+                <div class="div1">
+                    <input type="checkbox" id="film1" name="film1" value="film1">
+                    <label for="film1"><a href="#">Avengers: The Kang Dynasty</a></label>
+                </div>
+
+                <div class="div1">
+                    <input type="checkbox" id="film2" name="film2" value="film2">
+                    <label for="film2"><a href="#">Aquaman 2: o Reino Perdido</a></label>
+                </div>
+
+                <div class="div1">
+                    <input type="checkbox" id="film3" name="film3" value="film3">
+                    <label for="film3"><a href="#">The Marvels</a></label>
+                </div>
+
+                <div class="div1">
+                    <input type="checkbox" id="film4" name="film4" value="film4">
+                    <label for="film4"><a href="#">Deadpool 3</a></label>
+                </div>
+            </div>
+            <br>
+            <div class="div1">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
