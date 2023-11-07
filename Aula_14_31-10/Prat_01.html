@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Praticando 1</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+            font-size: large;
+        }
+
+        button {
+            margin: 10px;
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+        
+    </style>
+
 </head>
+
 <body>
-    
+    <div>
+        <h1>Praticando 1 - JavaScript</h1>
+        <h3>Olá! Seja bem-vindo.</h3>
+        <button id="addTextBtn">Adicionar texto (parágrafo de Lorem Ipson)</button>
+        <button id="removeTextBtn">Remover texto (todos os parágrafos)</button>
+        <div id="textContainer"></div>
+
+    </div>
+
+    <script>
+        const addTextBtn = document.getElementById('addTextBtn');
+        const remTextBtn = document.getElementById('removeTextBtn');
+        const textContainer = document.getElementById('textContainer');
+
+        addTextBtn.addEventListener('click', addParagraph);
+        remTextBtn.addEventListener('click', removeAllParagraphs);
+
+        function addParagraph() {
+            let paragraph = document.createElement('p');
+            paragraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis in sapiente excepturi maiores at neque doloremque perferendis vero earum rem voluptatem amet quam aliquid exercitationem numquam autem, provident magnam alias!';
+            textContainer.appendChild(paragraph);
+        }
+
+        function removeAllParagraphs() {
+            textContainer.innerHTML = '';
+        }
+
+        let name = prompt('Qual é o seu nome?');
+        let greeting = document.querySelector('h3');
+        greeting.textContent = `Olá, ${name}! Seja bem-vindo.`;
+    </script>
 </body>
+
 </html>

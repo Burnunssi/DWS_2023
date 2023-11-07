@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swimming Team</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main.html">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABfVBMVEX////9/f0AvOkHH13///0AvOoAvegAAEb8/P8AEVHs7fO+2u3A0uL///z9//8AAEwAAE/v//+1tsJucIeGiKOfo66JqMPq+//R6O2lxtP3//9z0OgDgc4dtNd71ekAAEIGIFsAAEgAADsAteBIkc8Dgc0AAFMAAD8AmdzW8/gAftAAdMPJ6PIGHFwAGFoAElkAjs4AADXU1uEAcrzCxtOcn7BjaIV3u+GHx+Pw8/kAmdrM7/Wt4uub2eYAmby24+xswtg+vdzB8vUADFhikbWKp8R8qdGHs9acxuDh8/qx0+RXmMkFLm8NWp0IerwMTZMQZ7Ewh8QBPH8UVpJAjsEYN28eJ1g8Q2pJT29Ej9AJUZoALXUdJFUAFEpxeZlXXHwvNVyKjJmQkrAwOW+NvM5zpLpMrNM9pNh/v+FAb59HYYnD2eUAmuKVvNxVrs4gl8mo0Ncbpb4AlLhSjLYAfa122us/xeOl8PVbzOAGqOGFytt4fY8AAB6rrsXGytJ1EJ54AAAYbklEQVR4nO1dCVsbR7atFiWpkadKNOBppxFarAHSaMNisYUkS4IMRnj3y4An8YIz8fLGsT3MmzA2fvFvf+fearHFJM4YInhfn89CrepFderu1dWyECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIEKcBkv/1Nk/8u/oAjS+uJX4X2FL3h6EWo/HB3wEXh/vBjyiC4fJg/KSRGxwa7pOakgyH5oV9whALyWHRFy0VWoLheSFPEri6GBnqE0NSHGLonjtJvPTESLJPdthjeOHpyz+cGF5+5Z4Chl+c5Df88XQwtE4KUp4ShvbJ8FOWJf58KhjK38xQftphtnUWtVRaNvf90yieQYb2b5P3GWQofxvNM8gQnaZzQfSTzjqLDEV3ZeXa6rmuJz7ltDPGELop9ersNFCYvbuy5gpmSa7YPsK/niWG2kZ4U93rhcKNGzcnUszyOkgqSytLYp8+4wxtJSHAtVvTt8ulUrl8b3YiBRRmV4ogaGvEEHXGGVJv3ZXZO9+WBkoDAwOl8r074Didmi58veaojwvwrDGUxbuF22XmNzCQHShXbtxMkSCnC3dXHaXVWbdDLYu37pTKA/tQKpduz5KuTs/eXfU+nvqdFYYaVla8c29wj12WGA6USoM3voFFTqQKt9Y82KLUNlzSmWNoS2Xr4n+VB7KlffyyRo7wOuUbt2GTha+LWmqOGfsong2G6LVI/GV5j+BAtjxUCSwym6WPpRt3JqYL17vCDMiZY2ipxHplYFdukNzG3PuNTDyenJxcXgbX7ADU9U4qdWvV0TTRfMYYwoWI+5VAXAaV9zjXTlTnhoeHnzzayCyTOCv3ZuFW7/71+mp3j+OZYIhujg6RSpZ6MszSFK9SsjfNm5hfT5Ygx/LNwjf3vr33zey1bu+Sp52hZqch5qZ29dMoaS5x4BTI86f1SRqDcpmDyDe3zinjb047Q5tco6qtl7MDpX0My/fFoSRGCns+UyE9ppQHCc/sOXUmZIg4j86PLO+nByzPHz7D1krURnIldreksN/OFpU+EwxJR7nj+9U0kzh0hiQ2SsxlS73DyjfuupTHnXqG6KO9Xj4owYHyAoe9AzK0JVyurD5Y3o2Y314TZ2ImSor5of3sIKNSpnrUZKKsvY9z6pMFxb/UzoAMpS0TU4ckOFBZOOJ4W0JTq5vlgUFIPVuanBf61DOEDEYqB/lly/HDVrjLUNmokxMPK49GMhV41AegfOoZqmr8IL9SOTN31OFISEkv55OPRXVkMFnOVcWpZyjFQuVArM8uPziSoEXBBaWT2NgQiB3DI5uJ06+lspo7EApLyYXEL96yoKlinXhC9SR9xWlmSNHaPmyFlan5vUlS22Q8H5X8XvvpZciTayIR3xNhaTA+GvgYSXdneF5GfnSCbR9OMUPKnMXo8q4Vlv723dz5XiC0ebf8hHtsp5ehJmXTg+Xdur70t43kpWogQ3PzQshfFeEpZqiErj7ZKHMa3eNYehhoqS10Yu6nn6q1A+X8mWKIgm9+M1M5QDCbLW1qI73E6PrF3GQyk3k89yu3Z/qbl/KKoeR+hmRYNDkvvPlMuXQgEFKFXxmByET1/H1kLLyzVBlaH6aYcEpl2FsTdUCGisb9w2b5zs0D5LgAHkJZKObjQ+W9GZtSObfw8RsWp5Qh3SZTIHFvYnY5mCwk+0MyevuGqSnEo+VDsk0+tn/BGE8Lw6CLmnJLMZq7MZG6U96d84Wgvp2dKGUrm7ZStY1D1WJ2YOiJOFqKfWYoDjFEgCA1rNA8fSXbI1gu3ZxIzZazlSfwMQ8Ol8PZbDl3VLHBDJ3+MvwOtrXfDm1djZdupKZBqVIyd9EGbqdSE6nbAwNTCVF9WD6kowOBfX4c0Ih+M5xPjoru95LuXltc8Ir7lfJNUJpOzd4og969OykiSEq6IIYf9iRY6oXI8mQyu3k+YLjfHiXdw0Ba9NQRC8m5PjFERBxOPhK173dFIMRcnAgyqYnC7OwE3+lNpW6icP/uSXK/+VGwyD1cmK/WtKBl3NoLQNP6SvF8qW17Tz1xv28MpRRzuQVRuwY71BhxZNoLmYFZ0lFajDCdShl+0xOzNGFaGSztzevjY3x99INN1/H84tqVy8+eGzx7/WJ1reg7ZkmK91SL9Xh1d3r8d2f4IXdfeCusoUrWRqeG7kE/C4Vbf7p+/U+3ZgvEkgR6I5Ba7wZwuZJ8OFqlazj1K8/ezMx8+QPw5S5mgOcvVuuu8lZE7cFgQvWJoRDV+IAQKzR5D419MFn5pjB799oarZWBaLovr31NNAs3ysyQptBgeZXJ3IOFYZKeuwZ2xOgHcHoD8V2+/OIK48VlyPTNzDPPvSYSgw/svvBjJLLxmrzmSa0TCxeT2f9eWe1qod36ubW1c0UHFuWee7Xy9831h8nk0OTkUDL5cH1jZJ5SbuG0Li9++eXiDz+A2+XVlu+yAe5TR+25ruyuimpus39L9aW9mUmI7y9IK/Hk/HC1Btm5rRfPSe0WSdEur7m0BN22E4kqI5Ew4vDqV97MLC7+sDjz/ErR9UBA9VIG41Gl2RAv18Tc0OM+MhSPc8Pi5Tkz8o5fvPIc5GBUMwzY1szia/IbruOZ1fbaw1GrrxdZOWeeN7u4BoKCraXyHE0vS9h0r1tbXIh8cUHMD42KfnkaeuBicl50X4kL5AUhOjao11fACSi2Vl88W5wxfN8ErvINMf9ycfHLmTdXfA13ySLTF2zp/kOpCy+luuBaGiQV35hbcflxiz4JkRgOxxeEuyIc8AC5xecvml3HYz9v8S1QzymuXX6+uOssg9fM4uWWo2gZmLIV3ZfBO1I+SvsgUbpNg2awh58WD+LVvtALGFYzWSEQlVcvX7myVnfJiVqCFQyKZvM6Uik9t7724jJFBRImHEuz6AglPd+y6r7SLdfyGp5yW57y61rW69JrIU6gWXX/KBKZB7V+aSnBXr+YEK+6vE3jToFfc0nb1TTfZNEnciTwLo7bBVxysQLyE8229NpN4Wy1LP+qL1vjnmq2tQia3C1fqLU/iLnk/X4SFGwlRVqtT2t9iKNlllIKm9SNpw2NY6T1QLRAkdY+SV4A5XlKaQ2bA10Ptughr6XsCAOkobgeqslrXVj6k/4yPD85gqyGnL2AsBxB/cYLm56ULgTqoL+OZlFqeBbknRrqR82eZyscqVz4TT5K0js1WeRSPZOzbcQ/9MvRGCQy67ZYQW/ctquKVx3Z7Gjd3tHeVkM4V+uqftXRzdda7KCp3VLOVtH2r7qyMe7pnbYItFT4W75sbDlyp+3pdlNxU8uWxVciMTVYk31jyMqDvFisrUFucBReSyq3bivft+WSCx/ioFlbbl1K37ck5ZlwoR767tSV5dctUXct2XLhWjzLqUtqsnxfWmj26GGLrvgpuSD6J0POsUaH3pOa2krQqgTEbkFJKpTWLFaX3CxpgtG8aFNqPkJYityToDujdC2aZmW3JAWvihZfafF4aJjnS/oHVc2t06wmInVN+m1PtHa0bDaUt1OHDvoWmqz6jtaNptQ7Lctp+8JtOxJN0jQJb8cnFaeTZatJJ1OT0EpcgJImL9b6yI6g9ToK1JerQnm1XidVsyHB0PLaXdWlJqaj5Q7ssN2VYKiKO55qNIXXLGrQUWAo6jt0slDNlnTQZBKaeSSl/WYINV0Q3lceqRVpFxQN6Qm5Ta2p+DcFPO2iPACK69l4UVJGgUNo0lJKSymnoTdulrThPhV6o29zNPuQSKK++OKlUFp6dfh+X9pwK7oOl1L3LK/e8zR4IeOse9I0WdLlJqnqDpo8OB+Nk+GA6Chao7j6UnxIPuxjbbiLx5PfCecrkoaJFkK0d4R3tSGdfyJa/BNNW2hqaz2OOHC1LpHAWI1xBJC28jpN6VxtmaYtR+wg1HR2pLOFAfDIzyRH+82O1PRDJmeL1aKkoE3RXlsctKF7CNyeA211uEk5HsKE0jaazFEIEZ5NJ5mX7J2s8Ca+OIfiN1ftpxs1QA/uD80L9ylVdXsdtPFuI6bB5GxN6QlE7MESPbHbpLEbR0q8LCRCpomO5KdPYNpiBAmT6j9BmnHL1jSsxtL/gEq2KacRXgcuESpZR6bSaFNOI3W7Id2tuvK3XNnqeNLkNNJ7vSS46bWHk6VEmqPgrHC9xEVkE32XITHUGxAizIaTab+F5AVm1PKV13Asp+FZ3ZYSpgllkktNKJWoTBLaNNmoniy3oSVSNSqoIHoXVkgiPAWghdlzucGEPLcquFySnJrwRAQn5PwRIUGZjyg1kMgIDg+eRXe6OfuRJhFSZrW+lCtdUZ3KJPrzkx+HocmdYrSfdqmrS00lGy2pmz5SE1e5O8hpmlo0Wko264jlroUm5Te11WoI0URe0PSVs+NIv4mI35Cy5YHWy1dC3598L/r0cxH7YX6lppob+iC7X8GViNYVJC+wrjbysde+SXNgh02wRJPzGgnMa0fU20jPdpD5oAJp15HmuNYSUr4Gsp86eV24mZ+S/awqfobRoU1brK1KlK70sB0t3lI8XWazWnJ9SKk2spZe1s3rZpHP0Eyizcm40pyM0x2nokgM8g9+nBaG0t6cRGz+c1HxChIXNa4PZfNRUCFLcXwUVa5WvmNRk/a1RBOOwsuhI1EyITT6to2jaFDWVqH4PE3a1+r+IKq5+BwyG8e2bY9zmq2GRk4jUQGL5hYCCILIVlO6V+sCFbBobHmCosVrSnNayv8nV8BoguDFhRVPzCcHE3zhU0IRpc6TyQcJBVO0tFKuI6VLdT9k2KW5NhYrmpTuIlX1LXrJQIZ0pOcjVfBtShe05fyPI6vxJP3sTt/D/R4w0htU6Ly8pnm+E6aI6ECPasHKyOjIPNlCpVnBL01c0dIOmuiWKP1FYO2qxPrQiHFiv7uaGqfxsXaZeEg51torsyyRJ2XgOP0OPGRbIKcRmpo61OSqFlws+dI2amX40i6a6qiVQduDMevHk5v6aG5anKBwtTx6SqGao9WVa99r9vENlOlNRziIEj4CX7EVNLlo8ripjqaWafLQ5LboIh7cqBiZepg4ug/wwSfoY4me20x/BGPp9LN//Wss/eOzsQOtY729tD2G9zF6T/P2WNDGf82fTj491vnXm9f84eNIuyfofmAsYmk8Hz2MWDRCf2MR2sBmhD6azejeJxwWtEWCc8zhkUhwSHAYXelnX7GH/Lh/gqmOlu54NBaJROi1h1i0133aQ/2LHOh+hFnTZgxn87kxjAe2o/yJGfKZtJ8+xugI/rv3bj7gkPSJZgLNPHPhLu6Cu0wdjvU48SiQVM1WjLsZNR1k9r09hpkhwKfzAbHYoTE8MJwd5yQIKi6UpBgzXLjDJAPqddR0jZmY7kVYErGegJlrtEeTxcuiiwUS4qMN7Uhwiei+oTEjZXbTkR26a3zglvixMPTrxWK9Xt+OBtoV5a+MGhH2usksDPOedFls3PuoIRWNBMppSAZKzWfwhVjSPIxGtXkjuk+ksQ66QugeK8O1WUJh9h13mxUyT+Chj9EGtvJ57ONWsz8wUT6K+ow9fCZv8OjwsebgcdZ2sws0+ZJmSLDJ7i0gGHtHHZktFG65x8lwJVgbY+QHWvntJd91l9LjYBj9cWkJwh2jvxFsvyWP+JY/YW8HDTQOUWz8SGMQHW/QBvW9udQwY/Pj0r95QGLppaVxc+w2jyWUsuG7fuNtPhBhNPZumtYhpVKFl8fJ8Po0/YoFGBo3E42OeYpvznRolJtCvI3mfSXpr3Q6JBcUiR0yunxDqjqzWJKC+MQib4VwiAbOU7SBg5aEa6j6SjSxa0yIbVb9fJqtTvl545Xx3Ys01MfO8FqB+KVmIsaOiIjXajb8Je7gDjHc9oRIRztatkgXQYxZRPJ1KRzoYnQMCXqTJZFGXB3DMeOOEH6eDDDvyjrLcNyxlZunMcP4kEniLIe+KE3X6jGcML82cayG2L2VIj2diQZxDJ1D3yL5cdIjGvGxPDoFBmlsUtfyqJPybHw+0uk2j4nECND5DTjlZj6GM4RcypMCx5C+sol2HLjtNMaHpQyrdpC90hdxLDEMZ0iE09OF1eMkKGSxMJGamF4MPHeMEosm2T97vjZkkne9BrSwLp08HZN3RYukgrFAlIHipSlrb7Pe1nE90AcbYkrat03ip7HDWF2ARubryh8nLzWmKQT3XO0uQxLhyvHedZNihS67aLINEptnIYnOm9CICmKsI/y3IOWQrZGQSSrkabHvAiSVd3RRGMvE6Pja6+Rb8oITSHVM6LccFdKQt6PHYI4sXMhSd0gjxsejuxGff/Rl4mvveGfitDgHIabe9XKuaHQbWgenQu6SdCvdkOlt0SIPwS6QpMKuAi1tz4NG+k3SPIrYrmx2MSTa2/HkGGeh0NcOKyWOudoAOwf+Bl9jVALEPSe/K8MJspdC8dhrR5eG7l0sEuSW5OVcpZbGWSqO2HGdTkfUG1A/ttQ0OR/SUkhl3BU7jmg32HQRsSHxhmgtSVSOniHWEB4FRvhUnN/xPJomJ5eW98nHwjGTz43uMgTFu85xJzXSuwVn+s6kxFEOymSMgd65sghN7OiaK5rcDfIi7BrYp7akB7kskWVCIG3IeQxuyRlPi56/BZEom7eqwwhlFwUzR12fPTIUmnyuYfhuwlih+Fgt/nkMU8zQFABvtynT8Hsxz4dNpEmUAWX0CVIhJwSp1PNjOH0bvqfJFQekGoMawoWQVMmJMDHSbbjORoTcDS7MmV4L/jcfHV8S9Xwvp3ln/MzxV/rMMBqYIXrrLv2b7m9yHgZlwliTa6ewxlmYL11OyLDRgp3qRh4RIU2+h2xtHAKFx1zC+ZzbOBLRgwwaAYcCi6AQGuE4pHS9UdeysZvJG4bXjn1CXPq0hDtqyrnotiN5psjtcOoMvUKcj1BCko6yGqPPS3lOKqnPkfFOnnzPW44jS9DYSL4zTjJvcr0FYmlOyMfIelEBCtZK7Mv/m6eklDfWqy1ii4EM5TGv0ZCrhdTETDTwpLF8ulGvt9LjJvOOjrUaHQgj3WqSj6cDmg0O/NFYo7FtCvftRoOqDDo1nTeFSbPxlsNNhw6iC+OYDplfkz9zPve2RV+0nY/1woVheF0ft6fxvuaUJnCl9HVcFwRlbzRvKuNoPmbsNBqUBmSkUVNGocnUktE810kU5jgVo7Z8UDTiOlxqBX6lV27slRaR6AwXARPHmbLxzB6JMLUY5e5Ed2dlYr3phWAWYq+Q65lNbwZjr/CNBLVUsCeYnTlc1Pf8SlDv87CaozkcppCzWcdIUYhz/NNqi3s9MRNJB/r0UQQd/XVEfgHR3twNbTPDienZ4nEpqSQhdm/xwM3sq7V76VtvguyXevgp+GWSLELOTd+Z53Ampm95x8WQZrauUdHJ8XB3yE2NEY30ZtSOovjRjseOkPhRMJNTPCFizHB6YqJQPCaGXOdehxFyZf1u37zl74l88MXvzKNG1JvC2rEx1GYSwzzNNNHD187vCM+nx8SCJ6qoG/hXODZDpNBavPvXPx1C91PuQUtaSyl72zwDGHzeO/tT+inFK+rAgU4cW30ozeK7n0GRgf7id2j+BT2+wl4KaU6RJlzTPeNP6ibdEvpZH46vPuS7PT9rpOcGfyWrwF6r9x9xmP/qw6I2m3dRG3Xc/rQp+kM5mjw4bp8HRWspg/9Rw1ydQXcSf/0r7g8+zGYHk0/E/Prg4OAlejpkI/5e0P3GS3QLrbZ58VMeoKSvCr4++HYa4mOSIS5+xJXkR++W7jsTXXr8eKOy/vj+XPXS4GNs14QYTi5v4tS53OR51D+jQ5/0iKjWhxSJn3Q7LhmSARyQXrCpP0VLwShOSyjnh+aDszY3FwZr1FBZgCSn6Iejfh1mMPfrEXfgPyN03HjCiw5Gk/P0eJ4Qc5nR7zJQ1vfLpUFbLJQH1vu9kvuzMQI1lOJ+OXPp4v8OQ20vJs5n8L4wODpVrV78LrvZ/5Vdn4nNHCSnN3M/DQ8P12Q183cSo9DrD6uX5hdy1Uzf16p/LmoPBm0pasl183GhEr80Vb4vatl1sV7OzVczp2Ch8+chkfwb/lYzm/Q/qNWqyfXR9+8HcqIafyweTa7r4dxP/e7h5+JDhp7rSUxNxjPxS8OP4uRSN6cSH6ZGRXW0Kp5Mfeh3Dz8XHxbOk2+fe0Sojowk8GF+ofphwTxJMb+QOCU+/3NwIMlWQd5tlgb8/wA/Q6qZGcdpzjH5oRrTdFoC938M2Ut9lCFzoOiSp2Ml9+eBFxjKXhnIVZCpSkzDmZdggF2GB9tChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECHOGP4PetqtmXpZgK0AAAAASUVORK5CYII="
+          alt="Logo" width="100" height="70" class="d-inline-block align-text-center"> Swimming Team</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="main.html">Página Inicial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="galeria.html">Galeria de Imagens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html">Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1>Formulário de Inscrição</h1>
+    <form>
+      <div class="form-group">
+        <label for="campoTexto">Nome</label>
+        <input type="text" class="form-control" id="campoTexto" placeholder="Digite aqui">
+      </div>
+
+      <div class="form-group">
+        <label for="campoEmail">E-mail</label>
+        <input type="email" class="form-control" id="campoEmail" placeholder="exemplo@empresa.com">
+      </div>
+
+      <div class="form-group">
+        <label for="campoTelefone">Telefone</label>
+        <input type="tel" class="form-control" id="campoTelefone" placeholder="(XX) XXXXX-XXXX">
+      </div>
+
+      <div class="form-group">
+        <label for="campoURL">Instagram</label>
+        <input type="url" class="form-control" id="campoURL" placeholder="instagram.com/exemplo">
+      </div>
+
+      <div class="form-group">
+        <label for="campoNumerico">Idade</label>
+        <input type="number" class="form-control" id="campoNumerico" placeholder="Sua idade em anos">
+      </div>
+
+      <div class="form-group">
+        <label for="campoData">Data de Nascimento</label>
+        <input type="date" class="form-control" id="campoData">
+      </div>
+
+      <div class="form-group">
+        <label for="campoArquivo">Documentos</label>
+        <input type="file" class="form-control-file" id="campoArquivo">
+      </div>
+
+      <div class="form-group">
+        <label for="listaSuspensa">Sexo</label>
+        <select class="form-control" id="listaSuspensa">
+          <option value="opcao1">Masculino</option>
+          <option value="opcao2">Feminino</option>
+          <option value="opcao3">Prefiro não responder</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="campoTextoLongo">Observações</label>
+        <textarea class="form-control" id="campoTextoLongo" rows="3" placeholder="Digite aqui"></textarea>
+      </div>
+
+
+      <fieldset class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Tipo de prova:</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="checkUnico1" value="option1">
+            <label class="form-check-label" for="checkUnico1">Velocidade</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="checkUnico2" value="option2">
+            <label class="form-check-label" for="checkUnico2">Fundo</label>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Estilos:</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checagemMultipla1">
+            <label class="form-check-label" for="checagemMultipla1">Livre</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checagemMultipla2">
+            <label class="form-check-label" for="checagemMultipla2">Costas</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checagemMultipla3">
+            <label class="form-check-label" for="checagemMultipla3">Borboleta</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checagemMultipla4">
+            <label class="form-check-label" for="checagemMultipla4">Peito</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="checagemMultipla5">
+            <label class="form-check-label" for="checagemMultipla5">Medley</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+      <button type="reset" class="btn btn-secondary mt-3">Limpar</button>
+      <br><br>
+    </form>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
