@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+            font-size: large;
+        }
+
+        button {
+            margin: 10px;
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Praticando 1 - JavaScript</h1>
+        <h3>Olá! Seja bem-vindo.</h3>
+        <button id="addTextBtn">Adicionar texto (parágrafo de Lorem Ipsum)</button>
+        <button id="removeTextBtn">Remover texto (todos os parágrafos)</button>
+        <div id="textContainer"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const $addTextBtn = $('#addTextBtn');
+            const $remTextBtn = $('#removeTextBtn');
+            const $textContainer = $('#textContainer');
+            const $greeting = $('h3');
+
+            $addTextBtn.on('click', addParagraph);
+            $remTextBtn.on('click', removeAllParagraphs);
+
+            function addParagraph() {
+                let paragraph = $('<p>').text('Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis in sapiente excepturi maiores at neque doloremque perferendis vero earum rem voluptatem amet quam aliquid exercitationem numquam autem, provident magnam alias!');
+                $textContainer.append(paragraph);
+            }
+
+            function removeAllParagraphs() {
+                $textContainer.empty();
+            }
+
+            let name = prompt('Qual é o seu nome?');
+            $greeting.text(`Olá, ${name}! Seja bem-vindo.`);
+        });
+    </script>
+</body>
+</html>
