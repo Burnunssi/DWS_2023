@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praticando 1</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Praticando 1 - </h1>
+    <div id="square1" class="square" style="background-color: red;"></div>
+    <div id="square2" class="square" style="background-color: green;"></div>
+    <div id="square3" class="square" style="background-color: blue;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const squares = document.querySelectorAll('.square');
+
+            squares.forEach(square => {
+                square.addEventListener('click', function () {
+                    moveSquare(square);
+                });
+            });
+
+            function moveSquare(square) {
+                window.addEventListener('keydown', function (event) {
+                    const key = event.key.toLowerCase();
+                    const squareRect = square.getBoundingClientRect();
+                    const currentLeft = squareRect.left;
+                    const currentTop = squareRect.top;
+                    const step = 10;
+
+                    switch (key) {
+                        case 'w':
+                            square.style.top = `${currentTop - step}px`;
+                            break;
+                        case 'a':
+                            square.style.left = `${currentLeft - step}px`;
+                            break;
+                        case 's':
+                            square.style.top = `${currentTop + step}px`;
+                            break;
+                        case 'd':
+                            square.style.left = `${currentLeft + step}px`;
+                            break;
+                    }
+                });
+            }
+        });
+
+    </script>
 </body>
+
 </html>
