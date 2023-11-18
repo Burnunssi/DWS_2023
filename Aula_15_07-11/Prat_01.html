@@ -5,68 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praticando 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
+            background-color: black;
+            color: white;
+        }
+
+        #lamp {
+            transition: filter 0.5s;
+        }
+
+        #lamp:hover {
+            filter: brightness(2);
+        }
+
+        .div1 {
+            height: 80vh;
+            margin: 0;
+            text-align: center;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
         }
 
-        .square {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-            cursor: pointer;
+        h3 {
+            font-size: large;
+            margin-top: 2vh;
         }
     </style>
+
 </head>
 
 <body>
-    <div id="square1" class="square" style="background-color: red;"></div>
-    <div id="square2" class="square" style="background-color: green;"></div>
-    <div id="square3" class="square" style="background-color: blue;"></div>
+    <h1>Praticando 1 - Lâmpada </h1>
+
+    <div class="div1">
+        <div class="col">
+            <img id="lamp" src="Imagens/lampada.png" alt="Lamp">
+            <h3>Lampada Apagada</h3>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const squares = document.querySelectorAll('.square');
+        document.getElementById("lamp").addEventListener("mouseover", interruptor);
+        document.getElementById("lamp").addEventListener("mouseout", interruptor);
 
-            squares.forEach(square => {
-                square.addEventListener('click', function () {
-                    moveSquare(square);
-                });
-            });
+        function interruptor() {
+            var lamp = document.getElementById("lamp");
+            var body = document.body;
+            let h3 = document.querySelector('h3');
 
-            function moveSquare(square) {
-                window.addEventListener('keydown', function (event) {
-                    const key = event.key.toLowerCase();
-                    const squareRect = square.getBoundingClientRect();
-                    const currentLeft = squareRect.left;
-                    const currentTop = squareRect.top;
-                    const step = 10;
+            lamp.src = lamp.src.includes("acesa") ? "Imagens/lampada.png" : "Imagens/lampada-acesa.png";
 
-                    switch (key) {
-                        case 'w':
-                            square.style.top = `${currentTop - step}px`;
-                            break;
-                        case 'a':
-                            square.style.left = `${currentLeft - step}px`;
-                            break;
-                        case 's':
-                            square.style.top = `${currentTop + step}px`;
-                            break;
-                        case 'd':
-                            square.style.left = `${currentLeft + step}px`;
-                            break;
-                    }
-                });
+            if (lamp.src.includes("acesa")) {
+                body.style.backgroundColor = "white";
+                h3.textContent = 'Lampada Acesa';
+                body.style.color = "black";
+            } else {
+                body.style.backgroundColor = "black";
+                h3.textContent = 'Lampada Apagada';
+                body.style.color = "white";
             }
-        });
-
+        }
     </script>
 </body>
+</head>
 
 </html>
