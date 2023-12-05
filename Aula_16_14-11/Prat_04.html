@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Praticando 4</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            margin: 5vh;
+        }
+
+        .txt {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .quad-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .quad {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            cursor: pointer;
+            border: 3px solid black;
+        }
+
+        #quad1 {
+            background-color: blue;
+        }
+
+        #quad2 {
+            background-color: red;
+        }
+
+        #quad3 {
+            background-color: green;
+        }
+
+        .selected-quad {
+            border-color: yellow;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="txt m-4">
+        <h1>Praticando 4 - Mini-game JS</h1>
+        <p><u>Instruções:</u></p>
+        <ol>
+            <li>Clique em um dos quadrados coloridos.</li>
+            <li>Depois use as teclas <mark>W</mark> <mark>A</mark> <mark>S</mark> <mark>D</mark> para movimentar os
+                elementos para cima, esquerda, baixo e direita respectivamente.
+            </li>
+            <input type="hidden" id="ativo" value="0">
+        </ol>
+
+        <div class="img">
+            <img src="Imagens/wasd.jpg" alt="wasd" width="300em">
+        </div>
+    </div>
+
+    <div class="quad-container">
+        <div id="quad1" class="quad" style="left: 0; top: 0;"></div>
+        <div id="quad2" class="quad" style="left: 105px; top: 0;"></div>
+        <div id="quad3" class="quad" style="left: 210px; top: 0;"></div>
+    </div>
+
+    <script>
+        const quads = $('.quad');
+        let selectedQuad = null;
+        let initialPositions = new Map();
+        const step = 10;
+
+        quads.each(function () {
+            const quad = $(this);
+            const id = quad.attr('id');
+            initialPositions.set(id, { x: parseInt(quad.css('left')), y: parseInt(quad.css('top')) });
+
+            quad.on('click', function () {
+                if (quad[0] !== selectedQuad) {
+                    if (selectedQuad) {
+                        alert('Por favor, deselecione o quadrado atual antes de selecionar outro.');
+                    } else {
+                        selectQuad(quad);
+                    }
+                } else {
+                    unselectQuad(quad);
+                }
+            });
+        });
+
+        function moverQuad(direction) {
+            if (selectedQuad) {
+                const $selectedQuad = $(selectedQuad);
+                const currentTop = parseInt($selectedQuad.css('top'));
+                const currentLeft = parseInt($selectedQuad.css('left'));
+
+                switch (direction) {
+                    case 'W':
+                        $selectedQuad.css('top', (currentTop - step) + 'px');
+                        break;
+                    case 'A':
+                        $selectedQuad.css('left', (currentLeft - step) + 'px');
+                        break;
+                    case 'S':
+                        $selectedQuad.css('top', (currentTop + step) + 'px');
+                        break;
+                    case 'D':
+                        $selectedQuad.css('left', (currentLeft + step) + 'px');
+                        break;
+                }
+            }
+        }
+
+        function rearrangeQuads() {
+            let offset = 0;
+
+            quads.each(function () {
+                const quad = $(this);
+                if (quad[0] !== selectedQuad) {
+                    quad.css('left', offset + 'px');
+                    offset += quad.width() + step;
+                }
+            });
+        }
+
+        function selectQuad(quad) {
+            selectedQuad = quad[0];
+            if (selectedQuad) {
+                const middleX = window.innerWidth / 2 - selectedQuad.clientWidth / 2;
+                const middleY = window.innerHeight / 2 - selectedQuad.clientHeight / 2;
+
+                selectedQuad.style.left = middleX + 'px';
+                selectedQuad.style.top = middleY + 'px';
+                selectedQuad.classList.add('selected-quad');
+                rearrangeQuads();
+            }
+        }
+
+        function unselectQuad(quad) {
+            if (quad) {
+                const id = quad.attr('id');
+                const initialPosition = initialPositions.get(id);
+                quad.css('left', initialPosition.x + 'px');
+                quad.css('top', initialPosition.y + 'px');
+                selectedQuad = null;
+                remClass(quad);
+                rearrangeQuads();
+            }
+        }
+
+        function remClass(quad) {
+            quad.removeClass('selected-quad');
+        }
+
+        $(document).on('keydown', function (event) {
+            const key = event.key.toUpperCase();
+            if (['W', 'A', 'S', 'D'].includes(key)) {
+                moverQuad(key);
+            }
+        });
+    </script>
+</body>
+</html>
